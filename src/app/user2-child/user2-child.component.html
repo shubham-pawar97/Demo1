@@ -1,0 +1,26 @@
+<div style="justify-content: center; display: flex; font-size: 20px; color: red;background-color: yellow;">
+    <div style="width:auto; margin-left: auto;margin-right: auto;"> Inside User21<br><br></div>
+ </div>
+ <div style="display: flex; justify-content: center; background-color: rgb(252, 186, 4);">
+    <input type="text" style="font-size: 20px;" placeholder="Enter text for Alert message" #msg>&nbsp;&nbsp;
+    <button (click) = "send(msg.value)" style="font-size: 20p; width: 100px;height: 25px;">Send Message</button>
+</div>
+ <div>
+     <table style="width:100% ;" border='1' bgcolor=lightgreen>
+         <tr>
+             <th>EMP_ID</th>
+             <th>FIRST_NAME</th>
+             <th>LAST_NAME</th>
+             <th>DEPARTMENT</th>
+         </tr>
+         <tr *ngFor="let item of items">
+             <td align="center">{{item.empid}} </td>
+             <td align="center">{{item.fname}} </td>
+             <td align="center">{{item.lname}} </td>
+             <td align="center">{{item.dept}} </td>
+             
+     
+         </tr>
+     </table>
+     
+     </div>

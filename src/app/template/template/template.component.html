@@ -1,0 +1,156 @@
+<header [ngClass] = "{'blue header' : true}">
+<div style=" display:flex; ;font-size: 30px;height:90px; flex-basis: 280px;align-items: center ;justify-content: center; background-color:#fcde37" >
+<div >Logo</div>
+</div>
+
+<div style="width: 100%; width:calc(100% - 280px);  height:45px ; background-color: #fcde37;" >
+   <div style="display: flex; justify-content: flex-end; height:45px">
+    <div style="display: flex; width:30%;font-size: 15px;  justify-content: space-around; margin-top:15px;margin-right:30px; height:45px">
+    <div  *ngFor="let top of tops">{{top}} </div>
+    </div>
+   </div>    
+<div style="display:flex;  height:45px; justify-content:flex-end; height: 45px; background-color:#fcde37;" >
+    <div style="display: flex;flex-direction: row; flex-wrap: nowrap; justify-content: space-around; align-items: flex-end; width:50%;align-items: flex-start;">
+        <div appTemplate *ngFor="let head of heads">{{head}} </div> 
+
+    </div>
+    
+</div>
+</div>
+</header>
+
+<div [class.view]=true style="justify-content: center;">
+    <div style="width:100%; height:70%; display: flex; background-image: url({{img1}});background-size: contain; background-repeat: no-repeat;">
+      <div [class.column]=true style="color: #00539b;  width:50%; height:100%; justify-content:center; align-items: center;"> 
+       <div>
+         <div style="font-size: 80px ; ">KM Paints App</div>
+         <div style="font-size: 30px;">Technical info you need at your fingertips.</div>
+         <div ><button appTemplate [class.btn]=true (click)="message('Download')" style="height: 40px;width: 100px;">Download</button></div>
+         <p>{{msg}}</p>
+      </div>
+     </div>
+
+    </div>
+</div>
+
+<div [class.view]=true >
+   <div style="display:flex;font-size:40px;height: 100px;align-items: flex-end; width: 90%;">Latest Specials And Features</div>
+   <div style="display: flex;width: 100%; height:calc(100% - 100px);justify-content: center; ">
+      <div style="display: flex; justify-content: space-between; width: 90%; height:80%;">
+         <div [class.column]=true style="width:32%; height:100% ;background-color: rgb(238, 236, 236);">
+             <img src={{img2}} width=90% height=50% style="margin: 5%;">
+            <div>
+            <b>Free Color Sample</b><br><br>
+             Please complete all fields on the form below to receive your coupon for a Free Color Sample Quart. This offer is valid at participating Kelly-Moore Paints retail locations in CA, NV, OK and TX.May not be redeemed online.
+            </div>
+          </div>
+         <div style="width:32%; height:100%;background-color: rgb(238, 236, 236);">
+            <img src={{img3}} height=50% width=90% style="margin:5%">
+            <div>
+            <b>myColorVisualizer</b><br><br>
+             Please complete all fields on the form below to receive your coupon for a Free Color Sample Quart. This offer is valid at participating Kelly-Moore Paints retail locations in CA, NV, OK and TX. May not be redeemed online. Please see coupons for details.
+            </div>
+         </div>
+         <div style="width:32%; height:100%;background-color: rgb(238, 236, 236);">
+            <img src={{img4}}  height=50% width=90% style="margin:5%">
+            <div>
+            <b>myColorStudio</b><br><br>
+             Please complete all fields on the form below to receive your coupon for a Free Color Sample Quart.This offer is valid at participating Kelly-Moore Paints retail locations in CA, NV, OK and TX. May not be redeemed online.
+            </div>
+         </div>
+         
+        </div>
+    </div>
+</div>
+
+<div [class.view]=true>
+    <div style="display:flex;font-size:40px;height: 100px;align-items: flex-end; width: 90%;">How To Paint Videos</div>
+    <div style="display: flex;width: 90%; height:calc(100% - 100px); background-color: #f3f3f3;">
+        <div style="display:flex; height: 100%; width: 70%; justify-content: space-evenly; align-items: center; "><img src={{img5}} height=90% width="90%"></div>
+        <div style="display: flex;width:30% ; height:50%; margin-top: 25px;" >
+            <div [class.column]=true style="font-size: 19px; ">
+                <div>
+                                <p [ngStyle]= "{'background': isBlue ? 'yellow' : ''}">    Stripes - Beautiful in any size or direction<br><br></p>
+                </div>
+                <div style="font-size: 15px;;">Once you know how to paint stripes the options are endless. Play with diagonal stripes, multi-color schemes; even plaids for a look thatâ€™s all your own.</div><br>
+                <button appTemplate [class.btn]=true (click)="see()" style=" width:50%;">See more how to paint video</button><br>
+                <div *ngIf = "status">Now you can see me <br> <button appTemplate (click)="hide()">Hide</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div [class.view]=true style="height: 80vh;">
+    <div style="display:flex;font-size:40px;height: 100px;align-items: flex-end; width: 90%;">News And Press</div>
+    <div style="display: flex;width: 90%; height:calc(100% - 150px); justify-content: space-between;">
+        <div style="width:30%;">
+            <div style="  height:40%;color: blue;  justify-content: space-between; " [class.column]=true><br>
+              <div style="color:black">NEW STORES:</div>
+              <div *ngFor="let story of stories">{{story}} </div>
+            </div>
+            <div [class.column]=true style="height:40%;color: blue; justify-content: space-between;"><br>
+                <div style="color:black">NEW AUTHORIZED DEALERS:</div><br>
+                <div *ngFor = "let dealer of dealers">{{dealer}}  </div>
+              </div>
+        </div>
+        <div style="width:30%;">
+        <div>LATEST NEWS:</div><br>
+        <div>2/6/2019- <span [class.blue]=true> Paints Expands Retail Reach With New Windsor Store</span></div><br>
+        <div>10/3/2018-<span [class.blue]=true>  A Classic Choice: Kelly-Moore Paints Names “Peacock Blue” Its 2019 Color of the Year</span></div><br>
+        <div>5/29/2018- <span [class.blue]=true>Kelly-Moore Paints Introduces Envyᵀᴹ Premium Exterior Paint & Enamel</span></div><br>
+        <div>10/11/2017- <span [class.blue]=true>A Natural Choice: Kelly-Moore Paints Names "Bahia Grass" Its 2018 Color of the Year</span></div><br>
+        <button appTemplate [class.btn]=true> See All News</button>
+        
+        
+        </div>
+        <div [class.column]=true style="width:30%;">
+        <div style="height: 30%;"><img src={{img6}} width=100% height=100%></div>
+        <div >I went to the store to select colors and buy samples for a new build. CJ was great at being patient with me and customizing the color matches and intensity of the tints. I purchased 8 or 9 sample cans and my painter had chosen Kelly Moore paints but I was able to have CJ make any color from any other mfr palette to match it. Jon and Sarah at the store have helped too, but CJ is the man to go see! He is a knowledgable and professional asset to the store.</div><br>
+        <div style=" font-size: 18px;"><b>2/21/2019, Frank L. -Auburn, CA, 5 Stars</b>
+        </div>
+        
+        </div>
+    </div>
+</div>
+<div style="height: 10px;width: 100vw; background-color: blue; width: 100%; border:1px solid black"></div>
+
+<footer style="height:300px;width: 100vw;" [class.column]=true>
+<div style="height:60%;  display: flex; justify-content: space-between;">
+    <div [class.column]=true style=" width:30%;height: 100%;justify-content: space-around; align-items: center;">
+        <div style="font-size: 20px;" ><b>Get Special Offers</b></div>
+        <div style="width: 70%;">p to receive email promotions and special offers from Kelly-Moore Paints.</div>
+        <button appTemplate (click)="message('sign up')" [class.btn]=true>Sign Up</button>
+    </div>
+    <div style=" width:30%;">
+        <div style="font-size: 20px; margin-top: 20px;"><b>Find Your Paint Store</b></div>
+         <div style="display: flex;"> <div style="font-size: 25px;"><input type="text" [(ngModel)]= 'nam'  style="font-size:20px ;" ></div><button appTemplate [class.btn]=true>Go</button></div>
+      <p>searching for {{nam}}</p>
+        </div>
+    <div style=" width:30%;">
+        <div style="font-size: 20px; margin-top: 20px;"><b>Connect & Inspire</b></div>
+      <div  style=" display: flex;"> 
+        <div >  <img src="/assets/logo1.png" [class.logo]=true> &nbsp;</div>
+        <div >  <img src="/assets/logo2.png" [class.logo]=true>&nbsp;</div>
+        <div >  <img src="/assets/logo3.png" [class.logo]=true>&nbsp;</div>
+        <div >  <img src="/assets/logo4.png" [class.logo]=true>&nbsp;</div>
+        <div >  <img src="/assets/logo5.png" [class.logo]=true>&nbsp;</div>
+        <div >  <img src="/assets/logo6.png" [class.logo]=true>&nbsp;</div>
+      
+    </div></div>
+</div>
+<div style=" display: flex; height: 40%;position: relative;left: 20px; justify-content: space-around;">
+    <div style="height: 100%; width: 55%;display: flex;flex-direction: column; justify-content: center; ">
+       <div style="display: flex;justify-content: space-evenly;">
+        <div *ngFor="let footer of footers">{{footer}} </div>
+    
+      </div>  
+      <div><img src="https://build.clouzerindia.com/assets/images/templates/KellyMoore/logo-paintcare.png"></div>
+    </div>
+    <div style="display: flex;" >
+        <br><br>
+       © 2019 Kelly-Moore Paints, All Rights Reserved.|<b [ngClass]="{blue : true}"><br><br>Sitemap</b>
+       
+    </div>
+ </div>
+
+</footer>

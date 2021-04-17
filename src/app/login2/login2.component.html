@@ -1,0 +1,27 @@
+<div style="font-size: 30px;">Reactive Form</div>
+<form  [formGroup]="grpForm" (ngSubmit)="show()">
+    <p>
+        <label for="name">My Name: </label>
+        <input type="text" formControlName="name" required >
+        
+    </p>
+    <br><br>
+    <p>
+        <label for="email">Email: </label>
+        <input type="email" formControlName="email" required>
+        <!-- <span [hidden]="email.valid || email.pristine">This field is required</span> -->
+    </p><br><br>
+    <p>
+        <label for="city">City: </label>
+        <input type="text" formControlName="city" required>
+        <!-- <span [hidden]="city.valid || city.pristine">This field is required</span> -->
+    </p><br><br>
+    <label>&nbsp;</label>
+    <button type="submit"  [disabled]="!grpForm.valid">send</button>
+    
+    </form>
+ 
+    <br> 
+    <br>
+  
+    

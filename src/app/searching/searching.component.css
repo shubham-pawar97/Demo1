@@ -1,0 +1,21 @@
+.d{
+    width: 33%;
+    margin: 5px;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+#data{
+    display: flex; 
+    justify-content: space-around;
+    align-items: flex-start;
+     width: 80%; 
+    font-size: 20px; 
+    
+     margin-top: 30px;
+}
+.go{
+    background-color: greenyellow;
+}
+

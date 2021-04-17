@@ -1,0 +1,30 @@
+<div style="font-size: 30px;">Template Driven Form</div>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <p>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" required [(ngModel)]='log.name' #name="ngModel">
+        <span [hidden]="name.valid || name.pristine">This field is required</span>
+    </p>
+    <br><br>
+    <p>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required [(ngModel)]='log.email' #email="ngModel">
+        <span [hidden]="email.valid || email.pristine">This field is required</span>
+    </p><br><br>
+    <p>
+        <label for="city">City: </label>
+        <input type="text" id="city" name="city" required [(ngModel)]='log.city' #city="ngModel">
+        <span [hidden]="city.valid || city.pristine">This field is required</span>
+    </p><br><br>
+    <label>&nbsp;</label>
+    <button type="submit" [disabled]="!loginForm.form.valid">send</button>
+    
+    </form>
+    <br>
+    <br>
+    <div [hidden]="!submited">
+      <p>  Your name is {{log.name}} </p>
+      <p>  Your Email is {{log.email}} </p>
+      <p>  Your City is {{log.city}} </p>
+    </div>
+    
